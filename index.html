@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffebee;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+        }
+        button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <button onclick="responder()">¡Sí!</button>
+        <button onclick="moverBoton()">No</button>
+    </div>
+
+    <script>
+        function responder() {
+            alert('¡Sabía que dirías que sí preciosa! ¡I love you so much! 💖');
+        }
+
+        function moverBoton() {
+            const boton = document.querySelector('button:nth-child(3)');
+            const x = Math.random() * (window.innerWidth - boton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - boton.offsetHeight);
+            boton.style.position = 'absolute';
+            boton.style.left = `${x}px`;
+            boton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
